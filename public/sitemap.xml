@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.7doors.in/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.7doors.in/about</loc><priority>0.8</priority></url>
+  <url><loc>https://www.7doors.in/services</loc><priority>0.9</priority></url>
+  <url><loc>https://www.7doors.in/services/corporate-real-estate</loc><priority>0.8</priority></url>
+  <url><loc>https://www.7doors.in/services/warehousing-industrial</loc><priority>0.8</priority></url>
+  <url><loc>https://www.7doors.in/services/residential-real-estate</loc><priority>0.8</priority></url>
+  <url><loc>https://www.7doors.in/services/hospitality</loc><priority>0.8</priority></url>
+  <url><loc>https://www.7doors.in/services/retail-real-estate</loc><priority>0.8</priority></url>
+  <url><loc>https://www.7doors.in/services/land-industrial</loc><priority>0.8</priority></url>
+  <url><loc>https://www.7doors.in/insights</loc><priority>0.6</priority></url>
+  <url><loc>https://www.7doors.in/careers</loc><priority>0.5</priority></url>
+  <url><loc>https://www.7doors.in/contact</loc><priority>0.9</priority></url>
+</urlset>
