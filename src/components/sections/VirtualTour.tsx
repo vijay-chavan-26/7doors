@@ -46,9 +46,10 @@ function Step({
   const mid = (start + end) / 2;
 
   // each step fades in around its slice of the scroll
+  // clamp boundary offsets to [0,1] — WAAPI ScrollTimeline requires it
   const opacity = useTransform(
     progress,
-    [start - 0.04, mid - 0.06, mid + 0.06, end + 0.02],
+    [Math.max(0, start - 0.04), mid - 0.06, mid + 0.06, Math.min(1, end + 0.02)],
     [0, 1, 1, 0],
   );
   const scale = useTransform(progress, [start, end], [1.08, 1]);
