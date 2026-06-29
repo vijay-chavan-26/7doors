@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Color system: "Door Navy" + "Door Brass" ----
+     Grounded in the brand name: brass is the metal of a door
+     handle/hinge, navy is the boardroom backdrop it sits against. */
+  --color-paper: #F7F8FA;
+  --color-paper-deep: #EEF1F4;
+  --color-ink: #101826;
+  --color-slate: #5B6472;
+  --color-slate-light: #8A92A0;
+  --color-line: #E2E5EA;
+
+  --color-navy: #14304F;
+  --color-navy-deep: #0B1726;
+  --color-navy-soft: #1C3D60;
+
+  --color-brass: #B6862C;
+  --color-brass-light: #D4A847;
+  --color-brass-dim: #8C6A23;
+
+  /* fonts */
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --container-7xl: 90rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brass);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* eyebrow label used above section headings */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-brass-dim);
+  }
+
+  /* the "door" hover treatment used on service & nav cards:
+     a thin brass hinge-line that swings the panel open slightly */
+  .door-panel {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 420ms ease;
+    transform-origin: left center;
+  }
+
+  .door-panel:hover,
+  .door-panel:focus-within {
+    transform: perspective(1400px) rotateY(-4deg) translateX(2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .door-panel:hover,
+    .door-panel:focus-within {
+      transform: none;
+    }
+  }
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

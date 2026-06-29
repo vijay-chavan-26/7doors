@@ -1,0 +1,118 @@
+import type { CoworkingSpace } from "@/types";
+import { images } from "@/lib/images";
+
+export const coworkingSpaces: CoworkingSpace[] = [
+  {
+    id: "cw-hsr-helix",
+    name: "Helix Workspaces — HSR",
+    tagline: "Flagship managed campus on the 27th Main",
+    city: "Bengaluru",
+    locality: "HSR Layout",
+    type: "Managed Office",
+    pricePerSeat: 12500,
+    capacity: 220,
+    rating: 4.8,
+    reviews: 96,
+    amenities: ["High-speed Wi-Fi", "Meeting rooms", "Cafeteria", "24/7 access", "Parking", "Phone booths"],
+    images: [images.coworkOpenPlan(1200), images.coworkBoardroom(1000), images.coworkLounge(1000)],
+    featured: true,
+    availability: "Filling Fast",
+    description:
+      "A full-floor managed campus built for teams of 20–200, with private cabins, dedicated zones, and a rooftop cafeteria — five minutes from the HSR BDA complex.",
+  },
+  {
+    id: "cw-koramangala-loft",
+    name: "The Loft — Koramangala",
+    tagline: "Startup-dense building on 80 Ft Road",
+    city: "Bengaluru",
+    locality: "Koramangala",
+    type: "Dedicated Desk",
+    pricePerSeat: 9800,
+    capacity: 140,
+    rating: 4.7,
+    reviews: 132,
+    amenities: ["High-speed Wi-Fi", "Meeting rooms", "Coffee bar", "Event space", "Bike parking"],
+    images: [images.coworkDesks(1200), images.coworkCafe(1000), images.coworkBreakout(1000)],
+    featured: true,
+    availability: "Available",
+    description:
+      "An exposed-brick loft in the heart of Koramangala's startup belt — dedicated desks, glass meeting cabins, and a ground-floor coffee bar that doubles as an event space.",
+  },
+  {
+    id: "cw-indiranagar-atrium",
+    name: "Atrium — Indiranagar",
+    tagline: "Boutique floors near 100 Ft Road",
+    city: "Bengaluru",
+    locality: "Indiranagar",
+    type: "Private Cabin",
+    pricePerSeat: 14200,
+    capacity: 80,
+    rating: 4.9,
+    reviews: 58,
+    amenities: ["High-speed Wi-Fi", "Private cabins", "Cafeteria", "24/7 access", "Wellness room"],
+    images: [images.coworkGlassCabin(1200), images.coworkReception(1000), images.coworkLounge(1000)],
+    featured: false,
+    availability: "Waitlist",
+    description:
+      "Boutique private cabins for small, senior teams who want a quiet, design-led floor a short walk from Indiranagar's metro and 100 Ft Road.",
+  },
+  {
+    id: "cw-whitefield-grid",
+    name: "Grid — Whitefield",
+    tagline: "Large-format space for scaling teams",
+    city: "Bengaluru",
+    locality: "Whitefield",
+    type: "Managed Office",
+    pricePerSeat: 8900,
+    capacity: 350,
+    rating: 4.6,
+    reviews: 74,
+    amenities: ["High-speed Wi-Fi", "Meeting rooms", "Cafeteria", "Parking", "Shower rooms", "Game zone"],
+    images: [images.coworkCorridor(1200), images.coworkOpenPlan(1000), images.coworkMeeting(1000)],
+    featured: true,
+    availability: "Available",
+    description:
+      "A large-format managed space near the ITPL corridor, sized for teams that expect to double — flexible floor plates, ample parking, and amenities for long days.",
+  },
+  {
+    id: "cw-pune-baner-nexus",
+    name: "Nexus — Baner",
+    tagline: "Bright floors on Baner Road",
+    city: "Pune",
+    locality: "Baner",
+    type: "Dedicated Desk",
+    pricePerSeat: 7500,
+    capacity: 160,
+    rating: 4.7,
+    reviews: 88,
+    amenities: ["High-speed Wi-Fi", "Meeting rooms", "Cafeteria", "24/7 access", "Parking"],
+    images: [images.coworkBreakout(1200), images.coworkDesks(1000), images.coworkCafe(1000)],
+    featured: false,
+    availability: "Available",
+    description:
+      "Bright, plant-filled floors on Baner Road with dedicated desks and a generous breakout lounge — popular with Pune's product and services teams.",
+  },
+  {
+    id: "cw-hyd-hitech-vault",
+    name: "Vault — HITEC City",
+    tagline: "Premium cabins in the financial district",
+    city: "Hyderabad",
+    locality: "HITEC City",
+    type: "Private Cabin",
+    pricePerSeat: 11800,
+    capacity: 120,
+    rating: 4.8,
+    reviews: 63,
+    amenities: ["High-speed Wi-Fi", "Private cabins", "Meeting rooms", "Cafeteria", "24/7 access", "Parking"],
+    images: [images.coworkReception(1200), images.coworkGlassCabin(1000), images.coworkBoardroom(1000)],
+    featured: false,
+    availability: "Filling Fast",
+    description:
+      "Premium private cabins in the heart of HITEC City, walking distance from the metro — built for GCC satellite teams and funded startups.",
+  },
+];
+
+export const getSpaceById = (id: string) => coworkingSpaces.find((s) => s.id === id);
+
+export const allCities = [...new Set(coworkingSpaces.map((s) => s.city))];
+export const allTypes = [...new Set(coworkingSpaces.map((s) => s.type))];
